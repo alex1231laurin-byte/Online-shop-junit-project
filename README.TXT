@@ -18,3 +18,4 @@ discussed in the book.
 NOTE: There are several serious errors to be found in these classes.
 
 14: The methods that are created automatically are setUp() and tearDown().
+17: We can find the code in the test result to see where it failed.
