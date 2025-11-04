@@ -13,11 +13,13 @@ import org.junit.jupiter.api.Test;
  */
 public class CommentTest
 {
+    private int votes;
     /**
      * Default constructor for test class CommentTest
      */
     public CommentTest()
     {
+        int votes = 0;
     }
 
     /**
@@ -38,5 +40,15 @@ public class CommentTest
     @AfterEach
     public void tearDown()
     {
+    }
+    
+    @Test
+    public void testUpVote(){
+        votes++;
+    }
+    
+    @Test
+    public void testDownVote(){
+        votes--;
     }
 }

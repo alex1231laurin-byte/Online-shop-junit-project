@@ -36,6 +36,10 @@ public class SalesItem
         return name;
     }
     
+    public ArrayList<Comment> getComment(){
+        return comments;
+    }
+    
     /**
      * Return the price of this item.
      */

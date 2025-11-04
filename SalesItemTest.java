@@ -2,6 +2,8 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import java.util.Iterator;
+import java.util.ArrayList;
 
 /**
  * The test class SalesItemTest.
@@ -11,11 +13,13 @@ import org.junit.Test;
  */
 public class SalesItemTest
 {
+    private ArrayList<Comment> comments;
     /**
      * Default constructor for test class SalesItemTest
      */
     public SalesItemTest()
     {
+        comments = new ArrayList<>();
     }
 
     /**
@@ -72,4 +76,16 @@ public class SalesItemTest
         assertEquals("test name", salesIte1.getName());
         assertEquals(1000, salesIte1.getPrice());
     }
+    
+
+    @Test
+    public void findMostHelpfulComment()
+    {
+        SalesItem salesIte1 = new SalesItem("programming for Dummies", 1530);
+        assertEquals(true, salesIte1.addComment("Alex Laurin", "its helpful", 4));
+        salesIte1.upvoteComment(0);
+        assertEquals(true, salesIte1.addComment("Laurin Alex", "I did not learn alot", 2));
+        assertEquals(salesIte1.getComment().get(0), salesIte1.findMostHelpfulComment());
+    }
 }
+
