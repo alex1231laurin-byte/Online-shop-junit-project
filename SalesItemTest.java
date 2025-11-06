@@ -87,5 +87,28 @@ public class SalesItemTest
         assertEquals(true, salesIte1.addComment("Laurin Alex", "I did not learn alot", 2));
         assertEquals(salesIte1.getComment().get(0), salesIte1.findMostHelpfulComment());
     }
+
+    @Test
+    public void testRemoveComment()
+    {
+        SalesItem salesIte1 = new SalesItem("test", 10);
+        assertEquals(true, salesIte1.addComment("testAuthor", "description", 3));
+        salesIte1.removeComment(0);
+        salesIte1.removeComment(-1);
+    }
+
+    @Test
+    public void testShowInfo()
+    {
+        SalesItem salesIte1 = new SalesItem("test", 10);
+        salesIte1.showInfo();
+        assertEquals(true, salesIte1.addComment("testAuthor", "description", 3));
+        salesIte1.showInfo();
+        salesIte1.upvoteComment(0);
+        assertEquals(true, salesIte1.addComment("testAuthor2", "description2", 3));
+        salesIte1.showInfo();
+    }
 }
+
+
 

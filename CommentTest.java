@@ -1,5 +1,3 @@
-
-
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -51,4 +49,14 @@ public class CommentTest
     public void testDownVote(){
         votes--;
     }
+
+    @Test
+    public void testGetFullDetails()
+    {
+        Comment comment1 = new Comment("testAuthor", "description", 3);
+        comment1.getRating();
+    }
 }
+
+
+
